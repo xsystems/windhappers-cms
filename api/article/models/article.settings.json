@@ -8,7 +8,8 @@
   "options": {
     "increments": true,
     "timestamps": true,
-    "draftAndPublish": true
+    "draftAndPublish": true,
+    "populateCreatorFields": true
   },
   "attributes": {
     "title": {
@@ -23,10 +24,25 @@
       "plugin": "upload",
       "required": true
     },
-    "section": {
+    "abstract": {
+      "type": "richtext",
+      "required": true
+    },
+    "sections": {
       "type": "component",
       "repeatable": true,
-      "component": "content.section"
+      "component": "content.section",
+      "required": true
+    },
+    "pinned": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "default": false,
+      "required": true
     }
   }
 }

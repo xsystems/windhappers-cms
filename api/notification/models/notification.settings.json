@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "notifications",
+  "info": {
+    "name": "Notification",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "info",
+        "warning",
+        "error"
+      ],
+      "required": true,
+      "default": "info"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "removable": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "hidden": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}
