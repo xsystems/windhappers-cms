@@ -1,5 +1,6 @@
 #!/bin/sh
 
+VERSION=${VERSION:-latest}
 BUILD_DIR=build-docker
 
 rm --recursive ${BUILD_DIR}
@@ -19,8 +20,18 @@ cp --recursive \
 
 docker build \
   --file docker/api/Dockerfile \
-  --tag xsystems/windhappers-cms-api ${BUILD_DIR}
+  --tag xsystems/windhappers-cms-api:${VERSION} \
+  ${BUILD_DIR}
+
+docker tag \
+  xsystems/windhappers-cms-api:${VERSION} \
+  xsystems/windhappers-cms-api:latest
 
 docker build \
   --file docker/gui/Dockerfile \
-  --tag xsystems/windhappers-cms-gui ${BUILD_DIR}
+  --tag xsystems/windhappers-cms-gui:${VERSION} \
+  ${BUILD_DIR}
+
+docker tag \
+  xsystems/windhappers-cms-gui:${VERSION} \
+  xsystems/windhappers-cms-gui:latest
