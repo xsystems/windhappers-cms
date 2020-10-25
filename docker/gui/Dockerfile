@@ -4,6 +4,9 @@ LABEL maintainer="xsystems"
 
 WORKDIR /windhappers-cms-gui
 
+COPY httpd-windhappers-cms-gui.conf /usr/local/apache2/conf/extra/
+RUN echo "Include conf/extra/httpd-windhappers-cms-gui.conf" >> /usr/local/apache2/conf/httpd.conf
+
 RUN apk add --no-cache nodejs npm
 
 COPY ./package.json ./

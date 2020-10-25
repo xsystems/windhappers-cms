@@ -4,8 +4,8 @@ module.exports = ({ env }) => ({
   upload: {
     provider: 'google-cloud-storage',
     providerOptions: {
-      serviceAccount: readJson(env('WINDHAPPERS_CMS_UPLOAD_GS_SERVICE_ACCOUNT_KEY', '/run/secrets/gcp-credentials.json')),
-      bucketName: env('WINDHAPPERS_CMS_UPLOAD_GS_BUCKET', 'windhappers-dev-cms-uploads'),
+      serviceAccount: readJson(env('CMS_UPLOAD_GS_SERVICE_ACCOUNT_KEY', '/run/secrets/gcp-credentials.json')),
+      bucketName: env('CMS_UPLOAD_GS_BUCKET', 'windhappers-dev-cms-uploads'),
     },
   },
 });

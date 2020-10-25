@@ -14,6 +14,7 @@ cp --recursive \
   extensions \
   public \
   docker/gui/entrypoint.sh \
+  docker/gui/httpd-windhappers-cms-gui.conf \
   ${BUILD_DIR}
 
 docker build \
