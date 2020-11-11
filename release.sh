@@ -15,5 +15,7 @@ git push origin ${VERSION}
 docker push xsystems/windhappers-cms-api:${VERSION}
 docker push xsystems/windhappers-cms-api:latest
 
-docker push xsystems/windhappers-cms-gui:${VERSION}
-docker push xsystems/windhappers-cms-gui:latest
+for ENVIRONMENT in prd acc dev ; do
+  docker push xsystems/windhappers-cms-gui:${VERSION}-${ENVIRONMENT}
+  docker push xsystems/windhappers-cms-gui:latest-${ENVIRONMENT}
+done
